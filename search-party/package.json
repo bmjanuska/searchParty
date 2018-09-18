@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "lint": "^1.1.2",
+    "mongoose": "^5.2.15",
     "passport": "^0.4.0",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
