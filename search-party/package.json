@@ -3,10 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "express": "^4.16.3",
+    "mysql2": "^1.6.1",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-scripts": "1.1.5",
-    "redux": "^4.0.0"
+    "redux": "^4.0.0",
+    "sequelize": "^4.38.1",
+    "sequelize-cli": "^4.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
