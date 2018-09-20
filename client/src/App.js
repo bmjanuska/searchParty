@@ -12,7 +12,6 @@ const App = () => (
     <Navbar />
     <Route exact path="/" component={Dash} />
     <Route exact path="/user" component={User} />
-
     </div>
     </Router>
 );
