@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Map from "../components/Map"
-import Navbar from "../components/Navbar"
 
 class Dash extends Component {
   state = { users: [] }
