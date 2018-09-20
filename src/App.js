@@ -18,11 +18,17 @@ class App extends Component {
             lng: position.coords.longitude
           }
           this.setState({pos, isMarkerShown:true})
+          // panTo(pos); 
+          // Map.setPosition(pos)
+          // Map.setContent('Location Here. ')
+          // Map.setCenter(pos)
         })
     } else {
       /* geolocation IS NOT available */
     }
   }
+
+
 
   render() {
     return (
