@@ -1,21 +1,45 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Map from "./components/Map";
+
 
 class App extends Component {
+  state = { 
+    pos:{},
+    isMarkerShown: false
+  }
+  componentDidMount() {
+    if (navigator.geolocation) {
+        /* geolocation is available */
+        navigator.geolocation.watchPosition (position => {
+          console.log(position);
+          var pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          }
+          this.setState({pos, isMarkerShown:true})
+        })
+    } else {
+      /* geolocation IS NOT available */
+    }
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Map 
+          pos={this.state.pos}
+          isMarkerShown={this.state.isMarkerShown}
+          googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyApIn7dZQPu26fDdHQtu1UMfTOWB7P06B0"
+          loadingElement={<div style={{ height: `100%` }} />}
+          containerElement={<div style={{ height: `400px` }} />}
+          mapElement={<div style={{ height: `100%` }} />}
+        />
       </div>
     );
   }
 }
 
 export default App;
+
+
