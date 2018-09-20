@@ -1,10 +1,10 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const badges = sequelize.define('badges', {
+  const Badges = sequelize.define('Badges', {
     image: DataTypes.STRING
   }, {});
-  badges.associate = function(models) {
+  Badges.associate = function(models) {
     // associations can be defined here
   };
-  return badges;
+  return Badges;
 };

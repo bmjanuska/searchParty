@@ -2,21 +2,21 @@
   "development": {
     "username": "root",
     "password": "root",
-    "database": "searchparty_development",
+    "database": "lost_and_found_development",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
     "password": "root",
-    "database": "searchparty__test",
+    "database": "lost_and_found_test",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
     "password": "root",
-    "database": "searchparty__production",
+    "database": "lost_and_found_production",
     "host": "127.0.0.1",
     "dialect": "mysql"
   }
