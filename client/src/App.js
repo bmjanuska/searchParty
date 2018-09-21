@@ -7,6 +7,9 @@ import Dash from "./pages/Dash";
 import User from "./pages/User";
 import Search from "./pages/Search";
 
+import Signup from "./pages/Signup";
+import Login from "./pages/Login"
+
 const App = () => (
   <Router>
     <div>
@@ -14,7 +17,8 @@ const App = () => (
     <Route exact path="/" component={Dash} />
     <Route exact path="/user" component={User} />
     <Route exact path="/search" component={Search} />
-
+    <Route exact path="/signup" component={Signup} />
+    <Route exact path="/login" component={Login} />
     </div>
     </Router>
 );
