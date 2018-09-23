@@ -12,7 +12,7 @@ const SearchForm = props => (
         type="text"
         className="form-control"
         placeholder="Leu Gardens"
-        id="place" 
+        id="place"
       />
       <button
         type="submit"
