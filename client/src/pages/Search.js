@@ -8,14 +8,10 @@ import API from "../utils/API.js";
 class Search extends Component {
   state = {
     search: "",
-    places: [],
     results: [],
     error: ""
   };
 
-  componentDidMount() {
-    API.getPlace()
-  }
 
   handleInputChange = event => {
     this.setState({ search: event.target.value });
@@ -24,14 +20,17 @@ class Search extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault(); 
+    console.log("I have been clicked");
     API.getPlace(this.state.search)
       .then(res => {
+        console.log("What I searched is: " + res.search);
         if(res.data.status === "error") {
           throw new Error(res.data.message); 
         }
         this.setState({results: res.data.message}); 
       })
       .catch(err => this.setState({error: err.message}));
+      
   };
 
   

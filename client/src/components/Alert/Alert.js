@@ -1,11 +1,13 @@
 import React from "react";
 
-const Alert = props =>
-    <div
-        className={`alert alert-$(props.tyep) fade in`}
-    >
-        {props.children}
-    </div>
+const Alert = props => (
+  <div
+    role="alert"
+    className={`alert alert-${props.type} fade in`}
+    style={{ width: "80%", margin: "0 auto", marginTop: 18, ...props.style }}
+  >
+    {props.children}
+  </div>
+);
 
-export default Alert
-
+export default Alert;
