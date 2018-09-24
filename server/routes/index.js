@@ -10,12 +10,13 @@ var db = require("../models");
 router.post('/signup', function(req, res, next) 
 {
   console.log("sanity: " + req.body.username);
+  console.log("sanity: " + req.body.password);
   db.Users.create({ 
     username: req.body.username, 
     password: req.body.password 
   })
-  .then(function(dbUser) {
-    res.json(dbUser);
+  .then(function(user) {
+    res.json(user)
   })
   
   

@@ -4,27 +4,27 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
-
-
+var Sequelize = require('sequelize');
+var db = require('./models')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-app.use(bodyParser.json()); // handle json data
-app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json()); 
+
 
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
+app.use('/signup', indexRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
@@ -43,4 +43,43 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+app.use(require("./routes/index"));
+
+var syncOptions = { force: false };
+
+var sequelize = new Sequelize('lost_and_found_development', 'root', 'root', {
+  host: '127.0.0.1',
+  username: 'root',
+  password: 'root',
+  dialect: 'mysql',
+  operatorsAliases: false,
+
+  pool: {
+    max: 5,
+    min: 0,
+    acquire: 30000,
+    idle: 10000
+  }
+
+});
+
+sequelize.sync(syncOptions).then(function() {
+  app.listen(PORT, function() {
+    console.log(
+      "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
+      PORT,
+      PORT
+    );
+  });
+});
+sequelize
+  .authenticate()
+  .then(() => {
+    console.log('Connection has been established successfully.');
+  })
+  .catch(err => {
+    console.error('UNABLE TO CONNECT TO DATABASE:', err);
+  });
 module.exports = app;
+
+
