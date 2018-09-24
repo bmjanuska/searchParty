@@ -4,8 +4,6 @@ import "./SearchForm.css";
 const SearchForm = props => (
   <form className="search">
     <div className="form-group">
-    <h1>Search by Address</h1>
-      <label htmlFor="place">Address or Place</label>
       <input
         value={props.search}
         onChange={props.handleInputChange}
@@ -18,7 +16,7 @@ const SearchForm = props => (
       <button
         type="submit"
         onClick={props.handleFormSubmit}
-        className="btn btn-success"
+        className="btn btn-pink"
       >
         Search
       </button>

@@ -3,7 +3,7 @@ import SearchForm from "../components/SearchForm";
 import SearchResults from "../components/SearchResults";
 import Alert from "../components/Alert";
 import API from "../utils/API.js";
-import { Container } from "../components/Grid";
+import { Container, Row, Col } from "../components/Grid";
 
 class Search extends Component {
   state = {
@@ -49,22 +49,40 @@ class Search extends Component {
     return (
       <div>
         <Container>
-          <SearchForm
-            handleFormSubmit={this.handleFormSubmit}
-            handleInputChange={this.handleInputChange}
-          />
+          <Row>
+            <Col size="12">
+              <h1>Search</h1>
+            </Col>
+          </Row>
 
-          <SearchResults
-            // long_name={this.state.long_name}
-            formatted_address={this.state.formatted_address}
-            lat={this.state.lat}
-            lng={this.state.lng}
-          />
-            <Alert
+          <Row>
+          <Col size="12">
+            <label htmlFor="place">Address or Place</label>
+            <SearchForm
+              handleFormSubmit={this.handleFormSubmit}
+              handleInputChange={this.handleInputChange}
+            />
+            </Col>
+          </Row>
+
+          <Row>
+          <Col size="12">
+
+            <SearchResults
+              // long_name={this.state.long_name}
+              formatted_address={this.state.formatted_address}
+              lat={this.state.lat}
+              lng={this.state.lng}
+            />
+            </Col>
+          </Row>
+
+          <Alert
             type="danger"
             style={{ opacity: this.state.error ? 1 : 0, }}
           >
           </Alert>
+          
         </Container>
       </div>
     );
