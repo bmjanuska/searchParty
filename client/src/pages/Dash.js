@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Map from "../components/Map"
 import Container from "../components/Container";
 import Row from "../components/Row";
+import Challenge from "../components/Challenge";
 
 class Dash extends Component {
     state = { users: [] }
@@ -44,12 +45,12 @@ class Dash extends Component {
                 />
                 <Container style={{ marginTop: 30 }}>
                     <Row>
-                        <h1>Users</h1>
+                        <h1>Challenges</h1>
                         {/* {this.state.users.map(user =>
                         <div key={user.id}>{user.username}</div>)} */}
                     </Row>
                     <Row>
-                        {/* <Challenge/> */}
+                        <Challenge/>
                     </Row>
                     {/* Challenges */}
                 </Container>

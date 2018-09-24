@@ -1,14 +1,10 @@
 import React from "react";
-import "./Navbar.css";
+import "./Footer.css";
 import { Link } from "react-router-dom";
 
 
-const Navbar = props => (
-    <nav className="navbar justify-content-center navbar-light bg-purp">
-      <Link className="navbar-brand" to="/">
-      {/* Image is not showing up..... why not?  */}
-      <img src="../../../public/icon-01.svg" alt="Search Party"/>
-      </Link>
+const Footer = props => (
+    <nav className="navbar sticky-bottom justify-content-center navbar-light bg-foot">
       <div>
         <ul className="nav">
           <li className="nav-item">
@@ -52,5 +48,5 @@ const Navbar = props => (
     </nav>
   );
   
-  export default Navbar;
+  export default Footer;
   

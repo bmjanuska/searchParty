@@ -12,6 +12,8 @@ class Search extends Component {
     error: ""
   };
 
+  // WE NEED THIS TO BE PUT IN THE RIGHT PLACE FOR API SEARCH
+// .replace(/ /g,"+")
 
   handleInputChange = event => {
     this.setState({ search: event.target.value });
@@ -35,12 +37,10 @@ class Search extends Component {
       
   };
 
-  
   render() {
     return (
       <div>
         <Container style={{ minHeight: "80%" }}>
-          <h1 className="text-center">Search by Address</h1>
           <Alert
             type="danger"
             style={{ opacity: this.state.error ? 1 : 0,  }}

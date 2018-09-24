@@ -1,5 +1,6 @@
-.bg-purp{ 
-    background-color: #8E43E8;
+.bg-foot{ 
+    margin-top: 25px;
+    background-color: #666;
 }
 
 .navbar .brand, .navbar .nav > li > a {
@@ -7,7 +8,6 @@
     font-family: 'Comfortaa', cursive;
     letter-spacing: 1px;
     font-size: 18px;
-
 }
 .navbar .brand, .navbar .nav > li > a:hover {
     color: #35DDFF;
