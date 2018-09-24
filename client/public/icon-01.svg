@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;stroke:#231F20;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:#231F20;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st2{fill:#231F20;}
+	.st3{fill:#4FE698;stroke:#009950;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st4{fill:#FED751;stroke:#D8B403;stroke-width:2;stroke-miterlimit:10;}
+	.st5{fill:#FED751;stroke:#D8B403;stroke-miterlimit:10;}
+	.st6{fill:#FD6A87;}
+</style>
+<ellipse class="st0" cx="50" cy="69.181" rx="29.0866" ry="26.9583"/>
+<g>
+	<path class="st1" d="M66.4702,73.7613c0,0-3.5302-12.9921-16.306-12.9921c-12.0963,0-16.306,12.9921-16.306,12.9921
+		s5.333,11.3986,16.306,11.3986C62.4586,85.1599,66.4702,73.7613,66.4702,73.7613z"/>
+	<ellipse class="st2" cx="50.1642" cy="72.9744" rx="8.8641" ry="12.847"/>
+	<g>
+		<line class="st1" x1="50.1642" y1="56.2043" x2="50.1642" y2="64.6049"/>
+		<line class="st1" x1="44.1925" y1="57.3852" x2="47.1455" y2="65.3907"/>
+		<line class="st1" x1="56.1359" y1="57.3852" x2="53.1829" y2="65.3907"/>
+	</g>
+	<g>
+		<line class="st1" x1="50.1642" y1="89.7248" x2="50.1642" y2="81.3243"/>
+		<line class="st1" x1="44.1925" y1="88.5439" x2="47.1455" y2="80.5385"/>
+		<line class="st1" x1="56.1359" y1="88.5439" x2="53.1829" y2="80.5385"/>
+	</g>
+</g>
+<path class="st3" d="M62.2245,43.4642L50.1642,9.6815L38.1039,43.4642c0,4.493,5.3996,7.8037,12.0603,7.8037
+	S62.2245,48.2206,62.2245,43.4642z"/>
+<g>
+	<path class="st4" d="M55.9685,9.6815c0-3.2147-2.606-5.8207-5.8207-5.8207c-0.864,0-1.6841,0.1883-2.4213,0.526
+		c-2.0059,0.9188-3.3994,2.9441-3.3994,5.2948c0,3.2147,2.606,5.8207,5.8207,5.8207C53.3625,15.5022,55.9685,12.8962,55.9685,9.6815
+		z"/>
+	<line class="st5" x1="53.2162" y1="14.6212" x2="47.2758" y2="4.6204"/>
+	<line class="st5" x1="53.118" y1="4.6204" x2="47.1776" y2="14.6212"/>
+	<line class="st5" x1="45.3" y1="6.4699" x2="55.1227" y2="12.7004"/>
+	<line class="st5" x1="55.2936" y1="6.8606" x2="45.1234" y2="12.5059"/>
+	<line class="st5" x1="49.8968" y1="3.8756" x2="50.5202" y2="15.4909"/>
+	<line class="st5" x1="44.4157" y1="10.202" x2="56.0014" y2="9.1646"/>
+</g>
+<circle class="st6" cx="55.9685" cy="43.9146" r="3.9727"/>
+<circle class="st6" cx="44.6501" cy="37.6754" r="3.3499"/>
+<circle class="st6" cx="51.2758" cy="27.558" r="4"/>
+</svg>

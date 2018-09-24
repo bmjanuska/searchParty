@@ -1,14 +1,22 @@
 import React, { Component } from 'react';
+import Container from "../components/Container";
+import Row from "../components/Row";
 
 class User extends Component {
 
     render() {
         return (
             <div className="User">
-                <h1>Users Page</h1>
-                {/* user Image */}
-                {/* user Name */}
-                {/* user Badges */}
+                <Container style={{ marginTop: 30 }}>
+                    <Row>
+                        {/* user Image */}
+                        <h1>User name</h1>
+                        {/* user Name */}
+                        {/* user Badges */}
+                    </Row>
+
+                    {/* Challenges */}
+                </Container>
             </div>
         );
     }

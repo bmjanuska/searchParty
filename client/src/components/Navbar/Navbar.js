@@ -4,12 +4,13 @@ import { Link } from "react-router-dom";
 
 
 const Navbar = props => (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar justify-content-center navbar-light bg-purp">
       <Link className="navbar-brand" to="/">
-        LOGO
+      {/* Image is not showing up..... why not?  */}
+      <img src="../../../public/icon-01.svg" alt="Search Party"/>
       </Link>
       <div>
-        <ul className="navbar-nav">
+        <ul className="nav">
           <li className="nav-item">
             <Link
               to="/"
