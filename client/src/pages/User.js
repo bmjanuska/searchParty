@@ -10,6 +10,7 @@ class User extends Component {
                 <Container style={{ marginTop: 30 }}>
                     <Row>
                         {/* user Image */}
+                        <img /> 
                         <h1>User name</h1>
                         {/* user Name */}
                         {/* user Badges */}

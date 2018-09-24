@@ -32,7 +32,7 @@ const Navbar = props => (
                   : "nav-link"
               }
             >
-              My Accout
+              My Account
             </Link>
           </li>
           <li className="nav-item">
