@@ -4,7 +4,8 @@ import "./App.css";
 
 // import Map from "./components/Map"
 import Navbar from "./components/Navbar"
-import Dash from "./pages/Dash";
+import Challenge from "./pages/Challenge";
+import Home from "./pages/Home";
 import User from "./pages/User";
 import Search from "./pages/Search";
 import Footer from "./components/Footer"
@@ -18,7 +19,8 @@ const App = () => (
   <Router>
     <div>
     <Navbar />
-    <Route exact path="/" component={Dash} />
+    <Route exact path="/" component={Home} />
+    <Route exact path="/challenge" component={Challenge} />
     <Route exact path="/user" component={User} />
     <Route exact path="/search" component={Search} />
     <Route exact path="/signup" component={Signup} />

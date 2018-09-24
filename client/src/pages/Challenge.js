@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import Map from "../components/Map"
-import { Container, Row, Col } from "../components/Grid";
-import Challenge from "../components/Challenge";
+import ChallengeList from "../components/ChallengeList"
 
-class Dash extends Component {
+import { Container, Row } from "../components/Grid";
+
+class Challenge extends Component {
     state = { users: [] }
 
     componentDidMount() {
@@ -33,7 +34,7 @@ class Dash extends Component {
 
     render() {
         return (
-            <div className="Dash">
+            <div className="Challenge">
                 <Map
                     pos={this.state.pos}
                     isMarkerShown={this.state.isMarkerShown}
@@ -44,12 +45,12 @@ class Dash extends Component {
                 />
                 <Container style={{ marginTop: 30 }}>
                     <Row>
-                        <h1>Challenges</h1>
+                        <h1>Checkpoints</h1>
                         {/* {this.state.users.map(user =>
                         <div key={user.id}>{user.username}</div>)} */}
                     </Row>
                     <Row>
-                        <Challenge/>
+                        <ChallengeList/>
                     </Row>
                     {/* Challenges */}
                 </Container>
@@ -59,5 +60,5 @@ class Dash extends Component {
     }
 }
 
-export default Dash;
+export default Challenge;
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Row, Col } from "../components/Grid";
+import { Container, Row  } from "../components/Grid";
 
 class User extends Component {
 
@@ -9,7 +9,7 @@ class User extends Component {
                 <Container style={{ marginTop: 30 }}>
                     <Row>
                         {/* user Image */}
-                        <img /> 
+                        <img src="../images/star-01.svg"/> 
                         <h1>User name</h1>
                         {/* user Name */}
                         {/* user Badges */}

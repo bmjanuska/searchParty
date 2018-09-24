@@ -1,10 +1,9 @@
 import React, { Component } from "react";
-import Container from "../components/Container";
 import SearchForm from "../components/SearchForm";
 import SearchResults from "../components/SearchResults";
-import Row from "../components/Row";
 import Alert from "../components/Alert";
 import API from "../utils/API.js";
+import { Container } from "../components/Grid";
 
 class Search extends Component {
   state = {

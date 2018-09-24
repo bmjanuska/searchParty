@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Challenge = () => (
+const ChallengeList = () => (
     // Make a list of tasks or places the user neeeds to visit. 
     // These "tasks" are exclusive to the specific challenge they are on. 
     <div>
@@ -25,8 +25,6 @@ const Challenge = () => (
     </div>
 );
 
-
-
 // Would be nice to have cute photos of Search Wizard with the pop up notifications
 
-export default Challenge; 
+export default ChallengeList; 
