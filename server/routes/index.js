@@ -11,7 +11,7 @@ router.post('/signup', function(req, res, next)
 {
   console.log("sanity: " + req.body.username);
   console.log("sanity: " + req.body.password);
-  db.Users.create({ 
+  db.User.create({ 
     username: req.body.username, 
     password: req.body.password 
   })
