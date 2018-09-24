@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Container, Row } from "../components/Grid";
-import Challenge from "../components/Challenge";
 
 class Home extends Component {
     state = { users: [] }
