@@ -12,9 +12,6 @@ class Search extends Component {
     error: ""
   };
 
-  // WE NEED THIS TO BE PUT IN THE RIGHT PLACE FOR API SEARCH
-// .replace(/ /g,"+")
-
   handleInputChange = event => {
     this.setState({ search: event.target.value });
     console.log(this.state.search);
@@ -26,7 +23,7 @@ class Search extends Component {
     API.getPlace(this.state.search)
       .then(res => {
         //need to handle the type to make spaces into + 
-        console.log("What I searched is: " + res.config.url);
+        console.log("What I searched is: " + res.results.formated_address);
         console.log(res);
         if(res.data.status === "error") {
           throw new Error(res.data.message); 

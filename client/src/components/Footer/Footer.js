@@ -4,43 +4,19 @@ import { Link } from "react-router-dom";
 
 
 const Footer = props => (
-    <nav className="navbar sticky-bottom justify-content-center navbar-light bg-foot">
+    <nav className="navbar sticky-bottom navbar-light bg-foot">
       <div>
         <ul className="nav">
           <li className="nav-item">
             <Link
               to="/"
               className={
-                window.location.pathname === "/" || window.location.pathname === "/dash"
+                window.location.pathname === "https://github.com/jessicahoward/searchParty" || window.location.pathname === "/dash"
                   ? "nav-link active"
                   : "nav-link"
               }
             >
-              Home
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link
-              to="/user"
-              className={
-                window.location.pathname === "/user"
-                  ? "nav-link active"
-                  : "nav-link"
-              }
-            >
-              My Accout
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link
-              to="/search"
-              className={
-                window.location.pathname === "/search"
-                  ? "nav-link active"
-                  : "nav-link"
-              }
-            >
-              Search
+              Github
             </Link>
           </li>
         </ul>
