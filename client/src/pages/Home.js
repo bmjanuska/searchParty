@@ -32,7 +32,7 @@ class Home extends Component {
     render() {
         return (
             <div className="Home">
-                <Container style={{ marginTop: 30 }}>
+                <Container>
                     <Row>
                         <h1>Challenges</h1>
                         {/* {this.state.users.map(user =>

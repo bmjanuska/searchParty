@@ -43,7 +43,7 @@ class Challenge extends Component {
                     containerElement={<div style={{ height: `400px` }} />}
                     mapElement={<div style={{ height: `100%` }} />}
                 />
-                <Container style={{ marginTop: 30 }}>
+                <Container>
                     <Row>
                         <h1>Checkpoints</h1>
                         {/* {this.state.users.map(user =>

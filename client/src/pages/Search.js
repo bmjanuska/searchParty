@@ -48,12 +48,7 @@ class Search extends Component {
   render() {
     return (
       <div>
-        <Container style={{ minHeight: "80%" }}>
-          <Alert
-            type="danger"
-            style={{ opacity: this.state.error ? 1 : 0, }}
-          >
-          </Alert>
+        <Container>
           <SearchForm
             handleFormSubmit={this.handleFormSubmit}
             handleInputChange={this.handleInputChange}
@@ -65,7 +60,11 @@ class Search extends Component {
             lat={this.state.lat}
             lng={this.state.lng}
           />
-  
+            <Alert
+            type="danger"
+            style={{ opacity: this.state.error ? 1 : 0, }}
+          >
+          </Alert>
         </Container>
       </div>
     );

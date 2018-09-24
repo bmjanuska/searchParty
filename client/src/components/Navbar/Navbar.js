@@ -7,7 +7,7 @@ const Navbar = props => (
     <nav className="navbar justify-content-center navbar-light bg-purp">
       <Link className="navbar-brand" to="/">
       {/* Image is not showing up..... why not?  */}
-      <img src="../../images/icons-01.svg" alt="Search Party"/>
+      <img src="../images/icon-01.svg" alt="Search Party"/>
       </Link>
       <div>
         <ul className="nav">
