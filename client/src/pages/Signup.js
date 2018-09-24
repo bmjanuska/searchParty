@@ -29,10 +29,10 @@ class Signup extends Component {
 			password: this.state.password
 		})
 		.then(function (response) {
-			console.log(response);
+			console.log("THIS IS A RESPONSE: " + response);
 		  })
 		  .catch(function (error) {
-			console.log(error);
+			console.log(error.response);
 		  });
 	}
 
