@@ -23,7 +23,9 @@ class Search extends Component {
     console.log("I have been clicked");
     API.getPlace(this.state.search)
       .then(res => {
-        console.log("What I searched is: " + res.search);
+        //need to handle the type to make spaces into + 
+        console.log("What I searched is: " + res.config.url);
+        console.log(res);
         if(res.data.status === "error") {
           throw new Error(res.data.message); 
         }

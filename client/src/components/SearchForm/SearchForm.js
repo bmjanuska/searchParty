@@ -26,3 +26,7 @@ const SearchForm = props => (
 );
 
 export default SearchForm;
+
+
+// WE NEED THIS TO BE PUT IN THE RIGHT PLACE FOR API SEARCH
+// .replace(/ /g,"+")
