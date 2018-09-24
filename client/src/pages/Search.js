@@ -9,6 +9,7 @@ import API from "../utils/API.js";
 class Search extends Component {
   state = {
     search: "",
+    // long_name: "",
     formatted_address: "",
     lat: "",
     lng: "",
@@ -34,6 +35,7 @@ class Search extends Component {
           throw new Error(res.data.message);
         }
         this.setState({
+          long_name: res.data.results[0].address_components[0].long_name,
           formatted_address: res.data.results[0].formatted_address,
           lat: res.data.results[0].geometry.location.lat,
           lng: res.data.results[0].geometry.location.lng
@@ -59,6 +61,7 @@ class Search extends Component {
           />
 
           <SearchResults
+            // long_name={this.state.long_name}
             formatted_address={this.state.formatted_address}
             lat={this.state.lat}
             lng={this.state.lng}

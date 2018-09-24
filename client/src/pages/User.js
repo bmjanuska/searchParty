@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import Container from "../components/Container";
-import Row from "../components/Row";
+import { Container, Row, Col } from "../components/Grid";
 
 class User extends Component {
 

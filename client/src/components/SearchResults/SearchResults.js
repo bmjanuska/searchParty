@@ -1,16 +1,20 @@
 import React from "react";
 import "./SearchResults.css";
+import Row from "../Row"
+
 
 const SearchResults = props => (
-  <ul className="search-results">
-      <li className="list-group-item" >
-      <p>test: {props.search}</p>
-      <p>Location: {props.address_compnent}</p>
+  <Row className="search-results">
+  <hr></hr>
+      {/* <p>Name: {props.long_name}</p> */}
       <p>Address: {props.formatted_address}</p>
       <p>Lat: {props.lat}</p>
       <p>Lng: {props.lng}</p>
-      </li>
-  </ul>
+    
+  </Row>
+
+
+
 );
 
 export default SearchResults;

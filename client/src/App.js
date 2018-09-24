@@ -12,6 +12,8 @@ import Footer from "./components/Footer"
 import Signup from "./pages/Signup";
 import Login from "./pages/Login"
 
+
+
 const App = () => (
   <Router>
     <div>

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Map from "../components/Map"
-import Container from "../components/Container";
-import Row from "../components/Row";
+import { Container, Row, Col } from "../components/Grid";
 import Challenge from "../components/Challenge";
 
 class Dash extends Component {
