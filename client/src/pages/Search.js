@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import SearchForm from "../components/SearchForm";
 import SearchResults from "../components/SearchResults";
-import Alert from "../components/Alert";
 import API from "../utils/API.js";
 import { Container, Row, Col } from "../components/Grid";
+import { Hbar } from "../components/Bars";
 
 class Search extends Component {
   state = {
@@ -54,7 +54,7 @@ class Search extends Component {
               <h1>Search</h1>
             </Col>
           </Row>
-
+      <Hbar/>
           <Row>
           <Col size="12">
             <label htmlFor="place">Address or Place</label>
@@ -67,22 +67,14 @@ class Search extends Component {
 
           <Row>
           <Col size="12">
-
             <SearchResults
-              // long_name={this.state.long_name}
+              
               formatted_address={this.state.formatted_address}
               lat={this.state.lat}
               lng={this.state.lng}
             />
             </Col>
-          </Row>
-
-          <Alert
-            type="danger"
-            style={{ opacity: this.state.error ? 1 : 0, }}
-          >
-          </Alert>
-          
+          </Row>          
         </Container>
       </div>
     );

@@ -1,7 +1,6 @@
 import React from "react";
 import "./Map.css";
-import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
-import { Circle } from "react-google-maps";
+import { withScriptjs, withGoogleMap, GoogleMap, Marker, Circle } from "react-google-maps"
 
 
 
@@ -10,28 +9,28 @@ const Map = withScriptjs(withGoogleMap((props) =>
   <GoogleMap
     defaultZoom={10}
     defaultCenter={{ lat: 28.589, lng: -81.199 }}
+    disableDefaultUI true
   >
     {props.isMarkerShown && <Marker position={props.pos} />}
     {/* <p>Lat: {props.pos.lat}  Lng: {props.pos.lng}</p> */}
 
     {/* Hardcoded Leu Garden */}
     <Circle
-      center= {{ lat: 28.567586, lng: -81.3553641 }}
-      radius= {400}
-      fillColor= {'#ACC249'}
+      center={{ lat: 28.567586, lng: -81.3553641 }}
+      radius={400}
     />
 
 
     {/* Hardcoded Lake Eola */}
     <Circle
       center={{ lat: 28.5438382, lng: -81.37525699999999 }}
-      radius= {400}
+      radius={400}
     />
 
     {/* Hardcoded Bootcamp */}
     <Circle
       center={{ lat: 28.589, lng: -81.199 }}
-      radius= {400}
+      radius={400}
     />
 
 

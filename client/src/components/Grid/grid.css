@@ -3,6 +3,12 @@
     overflow: hidden;
     display: block;
     position: relative;
-    padding-bottom: 100px; /* height of your footer */
+    padding-bottom: 80px; /* height of your footer */
     margin-top: 30px;
    }
+
+   @media only screen and (max-width: 600px) {
+    .container { 
+        padding: 0 25px; 
+    }
+}

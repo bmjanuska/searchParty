@@ -5,7 +5,6 @@ import { Row, Col } from "../Grid";
 
 const SearchResults = props => (
   <div>
-    <hr></hr>
     <span className="search-results card">
       <div className="card-body">
         <Row>
@@ -30,25 +29,3 @@ const SearchResults = props => (
 );
 
 export default SearchResults;
-
-
-{/* <span className="search-results card">
-<div className="card-body">
-<h5>Address: {props.formatted_address}</h5>
-<h5>Lat: {props.lat}</h5>
-<h5>Lng: {props.lng}</h5>
-<a href="#" class="btn btn-purple">Add to a Challenge</a>
-</div>
-</span> */}
-
-
-{/* <Row>
-  <Col size="md-8">
-    <span><h5>Address:</h5> {props.formatted_address}</span>
-    <span><h5>Lat:</h5> {props.lat}</span>
-    <span><h5>Lng:</h5> {props.lng}</span>
-  </Col>
-  <Col size="md-4">
-    <a href="#" class="btn btn-purple">Add to a Challenge</a>
-  </Col>
-</Row> */}

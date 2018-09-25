@@ -3,7 +3,7 @@ import "./Footer.css";
 import { Link } from "react-router-dom";
 
 
-const Footer = props => (
+export const Footer = props => (
     <nav className="navbar sticky-bottom navbar-light bg-foot">
       <div>
         <ul className="nav">
@@ -24,5 +24,4 @@ const Footer = props => (
     </nav>
   );
   
-  export default Footer;
   

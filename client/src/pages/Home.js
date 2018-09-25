@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from "../components/Grid";
-import banner from "../components/Banner"; 
 import Banner from '../components/Banner';
+import { Hbar } from "../components/Bars";
 
 class Home extends Component {
     state = { users: [] }
@@ -12,17 +12,15 @@ class Home extends Component {
                 <Container>
                     <Row>
                         <h1>Challenges</h1>
-                        {/* {this.state.users.map(user =>
-                        <div key={user.id}>{user.username}</div>)} */}
                     </Row>
                     {/* Challenges */}
-
+                    <Hbar/>
                     <Row>
                         <Col size="sm-12 md-8">
                             {/* challenge name */}
                             <h3 className="Challenge Name">Challenge Name</h3>
                             {/* number of places in the challenge */}
-                            <h4># Places</h4>
+                            <h4># Places Assigned to Challenge</h4>
                             <br></br>
                         </Col>
                         <Col size="sm-12 md-4">

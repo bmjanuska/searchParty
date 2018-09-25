@@ -3,7 +3,7 @@ import "./Navbar.css";
 import { Link } from "react-router-dom";
 
 
-const Navbar = props => (
+export const Navbar = props => (
     <nav className="navbar justify-content-center navbar-light bg-purp">
       <Link className="navbar-brand" to="/">
       {/* Image is not showing up..... why not?  */}
@@ -64,5 +64,5 @@ const Navbar = props => (
     </nav>
   );
   
-  export default Navbar;
+
   
