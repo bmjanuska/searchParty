@@ -46,7 +46,7 @@ app.use(function(err, req, res, next) {
 
 
 
-var syncOptions = { force: false };
+var syncOptions = { force: true };
 
 var sequelize = new Sequelize('lost_and_found_development', 'root', 'root', {
   host: '127.0.0.1',
