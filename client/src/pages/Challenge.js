@@ -74,12 +74,7 @@ class Challenge extends Component {
                     <br></br>
                     <Row>
                         <h1>Checkpoints</h1>
-
-                        {/* THIS IS NOT SHOWING UP */}
-                        <hr style={{borderWidth: 2}}></hr>
-                        
-                        {/* {this.state.users.map(user =>
-                        <div key={user.id}>{user.username}</div>)} */}
+                        {/* {this.state.users.map( over the checkpoints)} */}
                     </Row>
                     <Hbar/>
                     <ChallengeList
