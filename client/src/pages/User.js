@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from "../components/Grid";
+import UserIcon from '../components/UserIcon';
 
 class User extends Component {
 
@@ -10,7 +11,8 @@ class User extends Component {
                     <Row>
                         <Col size="sm-3" >
                             {/* user Image */}
-                            <img src="../images/star-01.svg" />
+                            <UserIcon/>
+                            {/* <img src="../images/star-01.svg" /> */}
                         </Col>
                         <Col size="sm-9" >
                             {/* user Name */}

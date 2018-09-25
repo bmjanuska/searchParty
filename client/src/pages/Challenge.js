@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 import Map from "../components/Map"
 import ChallengeList from "../components/ChallengeList"
+import ModalSuccess from "../components/ModalSuccess"
+import ModalDenied from "../components/ModalDenied"
 
 import { Container, Row } from "../components/Grid";
 
 class Challenge extends Component {
-    state = { users: [] }
+    state = { 
+        users: [], 
+        successOpen: false, 
+        denileOpen: false
+    }
 
     componentDidMount() {
         fetch('/users')
@@ -32,9 +38,30 @@ class Challenge extends Component {
         }
     }
 
+    checkin = () => {
+        console.log("I be checkin in~")
+        this.setState({successOpen: true})
+        //if user checkin in successfully 
+            // Recieve a congrats you found the spot msg
+        // else 
+            // Keep lookin! 
+    }
+
+
+    handleSuccessClose = () => {
+        this.setState({successOpen: false})
+    }
+
+    handleDeniedClose = () => {
+        this.setState({denileOpen: false})
+    }
+
     render() {
         return (
             <div className="Challenge">
+                {this.state.successOpen && <ModalSuccess handleClose={this.handleSuccessClose}/>}
+                {this.state.denileOpen && <ModalDenied handleClose={this.handleDeniedClose}/>}
+
                 <Map
                     pos={this.state.pos}
                     isMarkerShown={this.state.isMarkerShown}
@@ -46,12 +73,16 @@ class Challenge extends Component {
                 <Container>
                     <Row>
                         <h1>Checkpoints</h1>
+
+                        {/* THIS IS NOT SHOWING UP */}
+                        <hr style={{borderWidth: 2}}></hr>
+                        
                         {/* {this.state.users.map(user =>
                         <div key={user.id}>{user.username}</div>)} */}
                     </Row>
-                    <Row>
-                        <ChallengeList/>
-                    </Row>
+                    <ChallengeList
+                        handleCheckin={this.checkin}
+                    />
                     {/* Challenges */}
                 </Container>
 
