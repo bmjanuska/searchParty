@@ -7,7 +7,7 @@ const Navbar = props => (
     <nav className="navbar justify-content-center navbar-light bg-purp">
       <Link className="navbar-brand" to="/">
       {/* Image is not showing up..... why not?  */}
-      <img src="../../../public/icon-01.svg" alt="Search Party"/>
+      <img src="../images/icon-01.svg" alt="Search Party"/>
       </Link>
       <div>
         <ul className="nav">
@@ -15,12 +15,24 @@ const Navbar = props => (
             <Link
               to="/"
               className={
-                window.location.pathname === "/" || window.location.pathname === "/dash"
+                window.location.pathname === "/home" || window.location.pathname === "/home"
                   ? "nav-link active"
                   : "nav-link"
               }
             >
               Home
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link
+              to="/challenge"
+              className={
+                window.location.pathname === "/challenge" || window.location.pathname === "/challenge"
+                  ? "nav-link active"
+                  : "nav-link"
+              }
+            >
+              Challenge
             </Link>
           </li>
           <li className="nav-item">
@@ -32,7 +44,7 @@ const Navbar = props => (
                   : "nav-link"
               }
             >
-              My Accout
+              My Account
             </Link>
           </li>
           <li className="nav-item">
