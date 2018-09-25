@@ -29,11 +29,17 @@
 
 h1, h2, h3, h4, h5, h6, a, button {
   font-family: 'Comfortaa', cursive;
+  color:#542774;
 }
 
 p, label, input { 
   font-family: 'Lato', sans-serif;
   letter-spacing: .5px;
+  color: #222;
+}
+
+.jumbotron{ 
+  height:400px
 }
 
 .btn-purple {
