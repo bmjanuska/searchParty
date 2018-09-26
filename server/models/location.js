@@ -7,11 +7,15 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       autoIncrement: true,
     },
-    lat: DataTypes.INTEGER,
-    long: DataTypes.INTEGER,
+    lat: DataTypes.FLOAT,
+    long: DataTypes.FLOAT,
     checkedIn: {
       type: DataTypes.BOOLEAN,
       default: false
+    }, 
+    clue: {
+      type: DataTypes.STRING,
+      allownull: false
     }
   }, {});
   Location.associate = function(models) {
