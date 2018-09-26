@@ -7,8 +7,8 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       autoIncrement: true,
     },
-    lat: DataTypes.FLOAT,
-    long: DataTypes.FLOAT,
+    lat: DataTypes.FLOAT(15, 12),
+    long: DataTypes.FLOAT(15, 12),
     checkedIn: {
       type: DataTypes.BOOLEAN,
       default: false

@@ -9,10 +9,10 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       lat: {
-        type: Sequelize.INTEGER
+        type: Sequelize.FLOAT(15, 12)
       },
       long: {
-        type: Sequelize.INTEGER
+        type: Sequelize.FLOAT(15, 12)
       },
       checkedIn: {
         type: Sequelize.BOOLEAN
