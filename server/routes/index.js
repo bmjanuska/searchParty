@@ -1,10 +1,15 @@
 var express = require('express');
 var router = express.Router();
+var passport = require('passport');
+var bcrypt = require('bcrypt');
+var saltRounds = 10;
 
 var db = require("../models");
 /* GET home page. */
 router.get('/api/challenges', function(req, res, next) {
-  const userId = 1;
+  console.log(req.user);
+  console.log(req.isAuthenticated);
+  const userId = req.user;
   db.Challenge.findAll({
     where: {
       UserId: userId
@@ -21,25 +26,37 @@ router.get('/api/challenges', function(req, res, next) {
 
 router.post('/signup', function(req, res, next) 
 {
-  console.log("sanity: " + req.body.username);
-  console.log("sanity: " + req.body.password);
-  db.User.create({ 
-    username: req.body.username, 
-    password: req.body.password 
+  var password = req.body.password;
+  var username = req.body.username;
+  
+  bcrypt.hash(password, saltRounds, function(err, hash) {
+    // Store hash in your password DB.
+    db.User.create({ 
+    username: username, 
+    password: hash
   })
-  .then(function(user) {
-    res.json(user)
+  .then(result => {
+
+    var user_id = result.id
+    console.log("ID OF LAST ADDED USER: " + result.id);
+    req.login(user_id, function(err) {
+      console.log(err)
+      res.json(user_id)
+    })
   })
+  });
   
-  
-  
-  // .then(() => db.Users.findOrCreate({where: {username: req.body.username}}))
-  // .spread((user, created) => {
-  //   console.log(user.post({
-  //     plain: true
-  //   }))
-  //   console.log(created)
-  // }) 
 });
 
+
+passport.serializeUser(function(user_id, done) {
+  done(null, user_id);
+});
+
+passport.deserializeUser(function(user_id, done) { 
+    done(err, user_id);
+  });
+
 module.exports = router;
+
+

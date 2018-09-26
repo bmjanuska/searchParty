@@ -11,6 +11,11 @@ var usersRouter = require('./routes/users');
 var app = express();
 var PORT = 3001;
 
+// ========= authentication==========
+
+var session = require('express-session');
+var passport = require('passport');
+var MySQLStore = require('express-mysql-session')(session);
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -24,6 +29,25 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+var options = {
+  host: 'localhost',
+  user: 'root',
+  password: 'root',
+  database: 'lost_and_found_development'
+};
+
+var sessionStore = new MySQLStore(options);
+
+app.use(session({
+  secret: 'hfksdhflashdfil',
+  store: sessionStore,
+  resave: false,
+  saveUninitialized: false,
+  // cookie: { secure: true }
+}))
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use(indexRouter);
 app.use('/users', usersRouter);
