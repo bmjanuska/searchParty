@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import axios from 'axios'
+import React, { Component } from 'react';
+import axios from 'axios';
 
 class Signup extends Component {
 	constructor() {
@@ -19,28 +19,21 @@ class Signup extends Component {
 	handleSubmit(event) {
 		console.log('sign-up handleSubmit, username: ')
 		console.log(this.state.username)
+		console.log('sign-up handleSubmit, password: ')
+		console.log(this.state.password)
 		event.preventDefault()
 
 		//request to server to add a new username/password
-		axios.post('/user/', {
+		axios.post('/signup', {
 			username: this.state.username,
 			password: this.state.password
 		})
-			.then(response => {
-				console.log(response)
-				if (!response.data.errmsg) {
-					console.log('successful signup')
-					this.setState({ //redirect to login page
-						redirectTo: '/login'
-					})
-				} else {
-					console.log('username already taken')
-				}
-			}).catch(error => {
-				console.log('signup error: ')
-				console.log(error)
-
-			})
+		.then(function (response) {
+			console.log("THIS IS A RESPONSE: " + response);
+		  })
+		  .catch(function (error) {
+			console.log(error.response);
+		  });
 	}
 
 
