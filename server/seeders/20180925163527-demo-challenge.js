@@ -3,8 +3,8 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
    return queryInterface.bulkInsert('Challenges', [{
-    name: 'orlando',
-    UserId: 1
+    name: 'just for fun',
+    UserId: 20
   }], {});
   },
 
