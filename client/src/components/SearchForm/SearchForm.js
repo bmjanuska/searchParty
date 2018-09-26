@@ -1,7 +1,9 @@
 import React from "react";
 import "./SearchForm.css";
+import { Row, Col } from "../Grid";
 
 const SearchForm = props => (
+
   <form className="search">
     <div className="form-group">
       <input
@@ -22,6 +24,7 @@ const SearchForm = props => (
       </button>
     </div>
   </form>
+
 );
 
 export default SearchForm;

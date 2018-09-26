@@ -12,8 +12,16 @@ class Search extends Component {
     formatted_address: "",
     lat: "",
     lng: "",
-    error: ""
+    error: "",
+    clue:"",
+    challenge:"", 
+    searchedBox: false
   };
+
+  madeSearch = () => {
+    console.log("Look you did a search")
+        this.setState({successOpen: true})
+}
 
   handleInputChange = event => {
     this.setState({ search: event.target.value });
@@ -68,10 +76,12 @@ class Search extends Component {
           <Row>
           <Col size="12">
             <SearchResults
-              
+              handle={this.madeSearch}
               formatted_address={this.state.formatted_address}
               lat={this.state.lat}
               lng={this.state.lng}
+              clue={this.state.clue}
+              challenge={this.state.challenge}
             />
             </Col>
           </Row>          
