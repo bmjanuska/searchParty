@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
   Location.associate = function(models) {
     // associations can be defined here
     Location.belongsTo(models.User);
-    Challenge.belongsTo(models.Challenge);
+    Location.belongsTo(models.Challenge);
   };
   return Location;
 };

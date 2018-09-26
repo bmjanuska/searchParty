@@ -12,11 +12,11 @@ module.exports = (sequelize, DataTypes) => {
   Challenge.associate = function(models) {
     // associations can be defined here
     Challenge.belongsTo(models.User);
-    User.hasMany(models.Location, {
+    Challenge.hasMany(models.Location, {
       foriegnKey: "ChallengeId",
       onDelete: "CASCADE"
     });
-    User.hasMany(models.Clue, {
+    Challenge.hasMany(models.Clue, {
       foriegnKey: "ChallengeId",
       onDelete: "CASCADE"
     });
