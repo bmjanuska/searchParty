@@ -16,6 +16,10 @@ module.exports = (sequelize, DataTypes) => {
       foriegnKey: "UserId",
       onDelete: "CASCADE"
     });
+    User.hasMany(models.Location, {
+      foriegnKey: "UserId",
+      onDelete: "CASCADE"
+    });
   };
   return User;
 };

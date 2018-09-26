@@ -1,15 +1,21 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Challenges', {
+    return queryInterface.createTable('Locations', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
-        type: Sequelize.STRING
+      lat: {
+        type: Sequelize.INTEGER
+      },
+      long: {
+        type: Sequelize.INTEGER
+      },
+      checkedIn: {
+        type: Sequelize.BOOLEAN
       },
       createdAt: {
         allowNull: false,
@@ -24,13 +30,22 @@ module.exports = {
       onDelete: "CASCADE",
       allowNull: false,
       references: {
-        model: 'Users',
+        model: 'Users', 
         key: 'id'
       }
+    },
+    ChallengeId: {
+    type: Sequelize.INTEGER,
+    onDelete: "CASCADE",
+    allowNull: false,
+    references: {
+      model: 'Challenges',
+      key: 'id'
     }
+  }
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Challenges');
+    return queryInterface.dropTable('Locations');
   }
 };

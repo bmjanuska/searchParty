@@ -11,10 +11,15 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Challenge.associate = function(models) {
     // associations can be defined here
-    Challenge.belongsTo(models.User), {
-      foriegnKey: "UserId",
+    Challenge.belongsTo(models.User);
+    User.hasMany(models.Location, {
+      foriegnKey: "ChallengeId",
       onDelete: "CASCADE"
-    };
+    });
+    User.hasMany(models.Clue, {
+      foriegnKey: "ChallengeId",
+      onDelete: "CASCADE"
+    });
   };
   return Challenge;
 };

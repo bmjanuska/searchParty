@@ -1,17 +1,14 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Users', {
+    return queryInterface.createTable('Clues', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      username: {
-        type: Sequelize.STRING
-      },
-      password: {
+      clue: {
         type: Sequelize.STRING
       },
       createdAt: {
@@ -21,10 +18,19 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
+      },
+      ChallengeId: {
+      type: Sequelize.INTEGER,
+      onDelete: "CASCADE",
+      allowNull: false,
+      references: {
+        model: 'Challenges',
+        key: 'id'
       }
+    }
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Users');
+    return queryInterface.dropTable('Clues');
   }
 };
