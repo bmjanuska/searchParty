@@ -3,7 +3,7 @@ import Map from "../components/Map"
 import ChallengeList from "../components/ChallengeList"
 import ModalSuccess from "../components/ModalSuccess"
 import ModalDenied from "../components/ModalDenied"
-
+import axios from "axios";
 import { Container, Row } from "../components/Grid";
 
 class Challenge extends Component {
@@ -14,7 +14,7 @@ class Challenge extends Component {
     }
 
     componentDidMount() {
-        fetch('/users')
+        axios.get('/users')
             .then(res => res.text())
             .then(text => console.log(text))
             .then(users => this.setState({ users }));

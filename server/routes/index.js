@@ -3,9 +3,21 @@ var router = express.Router();
 
 var db = require("../models");
 /* GET home page. */
-// router.get('/', function(req, res, next) {
-//   res.render('index', { title: 'Express' });
-// });
+router.get('/api/challenges', function(req, res, next) {
+  const userId = 1;
+  db.Challenge.findAll({
+    where: {
+      UserId: userId
+    }
+  })
+  .then(data => {
+    console.log(data);
+    res.json(data)
+  }).catch(err => {
+    console.log(err)
+  })
+    console.log("We are here");
+});
 
 router.post('/signup', function(req, res, next) 
 {
