@@ -16,10 +16,6 @@ module.exports = (sequelize, DataTypes) => {
       foriegnKey: "ChallengeId",
       onDelete: "CASCADE"
     });
-    Challenge.hasMany(models.Clue, {
-      foriegnKey: "ChallengeId",
-      onDelete: "CASCADE"
-    });
   };
   return Challenge;
 };
