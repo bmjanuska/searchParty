@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from "../components/Grid";
 import Banner from '../components/Banner';
-
-import { Hbar } from "../components/Bars";
-
 import axios from 'axios';
 
 

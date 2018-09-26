@@ -7,9 +7,8 @@ var saltRounds = 10;
 var db = require("../models");
 /* GET home page. */
 router.get('/api/challenges', function(req, res, next) {
-  console.log(req.user);
-  console.log(req.isAuthenticated);
-  const userId = req.user;
+ 
+  const userId = 23;
   db.Challenge.findAll({
     where: {
       UserId: userId
@@ -26,6 +25,8 @@ router.get('/api/challenges', function(req, res, next) {
 
 router.post('/signup', function(req, res, next) 
 {
+  console.log("sanity: " + req.body.username);
+  console.log("sanity: " + req.body.password);
   var password = req.body.password;
   var username = req.body.username;
   
