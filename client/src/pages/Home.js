@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from "../components/Grid";
 import Banner from '../components/Banner';
+
+import { Hbar } from "../components/Bars";
+
 import axios from 'axios';
+
 
 class Home extends Component {
     state = {
@@ -26,6 +30,7 @@ class Home extends Component {
                 <Container>
                     <Row>
                         <h1>Challenges</h1>
+
                         
                     </Row>
                     {/* Challenges */}

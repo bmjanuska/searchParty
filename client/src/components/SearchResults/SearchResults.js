@@ -4,25 +4,49 @@ import { Row, Col } from "../Grid";
 
 
 const SearchResults = props => (
+
   <div>
-    <hr></hr>
     <span className="search-results card">
       <div className="card-body">
         <Row>
-          <Col size="sm-12 md-9">
+          <Col size="12">
+            {/* address  */}
             <h5 className="card-title">Address: </h5>
             <p className="card-text">{props.formatted_address}</p>
-
-            <h5 className="card-title">Lat: </h5>
-            <p className="card-text">{props.lat}</p>
-
-            <h5 className="card-title">Lng: </h5>
-            <p className="card-text">{props.lng}</p>
+            {/* latlng  */}
+            <p className="card-text">
+              <span className="latlng">Lat: </span> {props.lat}
+              <span className="latlng"> | </span>
+              <span className="latlng">Lng: </span> {props.lng}
+            </p>
+            {/* clue */}
+            <label htmlFor="clue">Clue</label>
+            <input
+              // Send this to database as a Clue
+              name="clue"
+              type="text"
+              className="form-control"
+              placeholder="Add Clue a Here"
+              id="clue"
+            />
             <br></br>
-          </Col>
-          <Col size="sm-12 md-3">
+            {/* challenge */}
+            <label htmlFor="challenge">Challenge</label>
+            <input
+              // Send this to database as a Clue
+              name="challenge"
+              type="text"
+              className="form-control"
+              placeholder="Add to this challenge"
+              id="challenge"
+            />
+
+
+            <br></br>
             <button href="#" className="btn btn-purple text-right">Add to Challenge</button>
+
           </Col>
+
         </Row>
       </div>
     </span>
@@ -30,25 +54,3 @@ const SearchResults = props => (
 );
 
 export default SearchResults;
-
-
-{/* <span className="search-results card">
-<div className="card-body">
-<h5>Address: {props.formatted_address}</h5>
-<h5>Lat: {props.lat}</h5>
-<h5>Lng: {props.lng}</h5>
-<a href="#" class="btn btn-purple">Add to a Challenge</a>
-</div>
-</span> */}
-
-
-{/* <Row>
-  <Col size="md-8">
-    <span><h5>Address:</h5> {props.formatted_address}</span>
-    <span><h5>Lat:</h5> {props.lat}</span>
-    <span><h5>Lng:</h5> {props.lng}</span>
-  </Col>
-  <Col size="md-4">
-    <a href="#" class="btn btn-purple">Add to a Challenge</a>
-  </Col>
-</Row> */}

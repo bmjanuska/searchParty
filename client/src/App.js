@@ -1,19 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
-
-// import Map from "./components/Map"
-import Navbar from "./components/Navbar"
+import { Navbar, Footer } from "./components/Bars";
 import Challenge from "./pages/Challenge";
 import Home from "./pages/Home";
 import User from "./pages/User";
 import Search from "./pages/Search";
-import Footer from "./components/Footer"
-
 import Signup from "./pages/Signup";
 import Login from "./pages/Login"
-
-
 
 const App = () => (
   <Router>

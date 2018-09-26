@@ -3,8 +3,12 @@ import Map from "../components/Map"
 import ChallengeList from "../components/ChallengeList"
 import ModalSuccess from "../components/ModalSuccess"
 import ModalDenied from "../components/ModalDenied"
+
+import { Hbar } from "../components/Bars";
+import { Container, Row, Col } from "../components/Grid";
+
 import axios from "axios";
-import { Container, Row } from "../components/Grid";
+
 
 class Challenge extends Component {
     state = { 
@@ -40,13 +44,12 @@ class Challenge extends Component {
 
     checkin = () => {
         console.log("I be checkin in~")
-        this.setState({successOpen: true})
-        //if user checkin in successfully 
+        //if userlocation === the location of the specific location checkin in successfully 
             // Recieve a congrats you found the spot msg
+            this.setState({successOpen: true})
         // else 
             // Keep lookin! 
     }
-
 
     handleSuccessClose = () => {
         this.setState({successOpen: false})
@@ -70,16 +73,14 @@ class Challenge extends Component {
                     containerElement={<div style={{ height: `400px` }} />}
                     mapElement={<div style={{ height: `100%` }} />}
                 />
+
                 <Container>
+                    <br></br>
                     <Row>
                         <h1>Checkpoints</h1>
-
-                        {/* THIS IS NOT SHOWING UP */}
-                        <hr style={{borderWidth: 2}}></hr>
-                        
-                        {/* {this.state.users.map(user =>
-                        <div key={user.id}>{user.username}</div>)} */}
+                        {/* {this.state.users.map( over the checkpoints)} */}
                     </Row>
+                    <Hbar/>
                     <ChallengeList
                         handleCheckin={this.checkin}
                     />

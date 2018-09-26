@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from "../components/Grid";
 import UserIcon from '../components/UserIcon';
+import { Hbar } from "../components/Bars";
 
 class User extends Component {
 
@@ -11,20 +12,20 @@ class User extends Component {
                     <Row>
                         <Col size="sm-3" >
                             {/* user Image */}
-                            <UserIcon/>
+                            <UserIcon />
                             {/* <img src="../images/star-01.svg" /> */}
                         </Col>
                         <Col size="sm-9" >
                             {/* user Name */}
                             <h1>User Name</h1>
                             {/* user rank */}
-                            <hr></hr>
+                            <Hbar />
                             <h3>User Rank</h3>
                             <h3>Completed: # Challenges</h3>
                         </Col>
                         {/* user Badges */}
                     </Row>
-                    <hr></hr>
+                    <Hbar />
                     <Row>
                         <Col size="12">
                             <h2>Badges</h2>
