@@ -2,8 +2,24 @@ import React, { Component } from 'react';
 import { Container, Row, Col } from "../components/Grid";
 import UserIcon from '../components/UserIcon';
 import { Hbar } from "../components/Bars";
+import axios from "axios";
 
 class User extends Component {
+    state = {
+        user: ""
+    }
+
+    componentDidMount() {
+        axios.get("/user")
+            .then(res => {
+                this.setState({
+                    user: res.data,
+                })
+                console.log("THIS IS THE STATE OF USER IN USER");
+                console.log(this.state.user);
+                console.log(res);
+            });
+    }
 
     render() {
         return (

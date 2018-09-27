@@ -14,7 +14,23 @@ router.get('/user', authenticationMiddleware(), function (req, res) {
 router.get("/login", function (req, res) {
   redirect("/login");
 });
-
+// ============= DISPLAY USERNAME =========================
+router.get("/user", function (req, res, next) {
+  const displayId = 9;
+  db.User.findOne({
+    where: {
+      username: displayId
+    }
+  }).then(data => {
+    console.log(data);
+    res.json(data)
+  }).catch(err => {
+    console.log("ERROR: " + err)
+  })
+   console.log("USER NAME DISPLAYED")
+})
+// ====================================================
+// ================== PULLS LOCATION DATA BASED ON CHALLENGE ============== \\
 router.get("/challenge", function (req, res, next) {
   const challengeId = 5;
   db.Location.findAll({
@@ -31,6 +47,7 @@ router.get("/challenge", function (req, res, next) {
   console.log("LOCATIONS FOR CHALLENGES")
 })
 // ==================================================
+
 router.post("/login", passport.authenticate("local", {
   successRedirect: "/user",
   failureRedirect: "/login"
@@ -39,7 +56,7 @@ router.post("/login", passport.authenticate("local", {
 
 // ============== PULLS CHALLENGE NAMES BASED ON USER =============== \\
 router.get('/api/challenges', function (req, res, next) {
-  const userId = req.user;
+  const userId = 9;
   console.log("SHOULD BE LOGGED IN USER: " + userId);
   db.Challenge.findAll({
     where: {
@@ -58,21 +75,21 @@ router.get('/api/challenges', function (req, res, next) {
 });
 
 // ================== PULLS LOCATION DATA BASED ON CHALLENGE ============== \\
-router.get('/challenges', function (req, res, next) {
-  const challengeId = 3;
-  db.Location.findAll({
-    where: {
-      ChallengeId: challengeId
-    }
-  })
-    .then(data => {
-      console.log(data);
-      res.json(data)
-    }).catch(err => {
-      console.log("ERROR " + err)
-    })
-  console.log("Over here now");
-});
+// router.get('/challenges', function (req, res, next) {
+//   const challengeId = 3;
+//   db.Location.findAll({
+//     where: {
+//       ChallengeId: challengeId
+//     }
+//   })
+//     .then(data => {
+//       console.log(data);
+//       res.json(data)
+//     }).catch(err => {
+//       console.log("ERROR " + err)
+//     })
+//   console.log("Over here now");
+// });
 // ================= POST TO REGISTER USER ================\\
 router.post('/signup', function (req, res, next) {
   console.log("sanity: " + req.body.username);
