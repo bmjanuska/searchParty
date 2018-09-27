@@ -19,9 +19,9 @@ const SearchForm = props => (
             id="place"
           />
         </Form.Group>
-        
-        </Col>
-        <Col sm={4}>
+
+      </Col>
+      <Col sm={4}>
 
         <Button
           className="btn btn-pink"

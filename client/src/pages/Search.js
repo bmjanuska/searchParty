@@ -14,15 +14,15 @@ class Search extends Component {
     lat: "",
     lng: "",
     error: "",
-    clue:"",
-    challenge:"", 
+    clue: "",
+    challenge: "",
     showresults: false
   };
 
   madeSearch = () => {
     console.log("Look you did a search")
-        this.setState({showresults: true})
-}
+    this.setState({ showresults: true })
+  }
 
   handleInputChange = event => {
     this.setState({ search: event.target.value });
@@ -63,25 +63,19 @@ class Search extends Component {
               <h1>Search</h1>
             </Col>
           </Row>
-      <Hbar/>
-        
-          
-            <SearchForm
-              handleFormSubmit={this.handleFormSubmit}
-              handleInputChange={this.handleInputChange}
-            />
-       
-     
-            <SearchResults
-              handle={this.madeSearch}
-              formatted_address={this.state.formatted_address}
-              lat={this.state.lat}
-              lng={this.state.lng}
-              clue={this.state.clue}
-              challenge={this.state.challenge}
-            />
-        
-              
+          <Hbar />
+          <SearchForm
+            handleFormSubmit={this.handleFormSubmit}
+            handleInputChange={this.handleInputChange}
+          />
+          <SearchResults
+            handle={this.madeSearch}
+            formatted_address={this.state.formatted_address}
+            lat={this.state.lat}
+            lng={this.state.lng}
+            clue={this.state.clue}
+            challenge={this.state.challenge}
+          />
         </Container>
       </div>
     );

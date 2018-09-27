@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container} from "../components/Grid";
+import { Container } from "../components/Grid";
 import { Row, Col } from "react-bootstrap";
 import Banner from '../components/Banner';
 import axios from 'axios';

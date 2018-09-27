@@ -6,7 +6,7 @@ import { Container, Row, Col, Form, Button } from "react-bootstrap";
 const SearchResults = props => (
   <div>
     <Form>
-      
+
       <Row>
         <Col sm={12}>
           <Form.Group controlId="exampleForm.ControlInput1">
