@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
-import { Navbar, Footer } from "./components/Bars";
+import { TopNavbar, Footer } from "./components/Bars";
 import Challenge from "./pages/Challenge";
 import Home from "./pages/Home";
 import User from "./pages/User";
@@ -12,7 +12,7 @@ import Login from "./pages/Login"
 const App = () => (
   <Router>
     <div>
-    <Navbar />
+    <TopNavbar />
     <Route exact path="/" component={Home} />
     <Route exact path="/challenge" component={Challenge} />
     <Route exact path="/user" component={User} />
