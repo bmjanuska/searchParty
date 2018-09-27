@@ -8,7 +8,6 @@ import { Hbar } from "../components/Bars";
 class Search extends Component {
   state = {
     search: "",
-    // long_name: "",
     formatted_address: "",
     lat: "",
     lng: "",
