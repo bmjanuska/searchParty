@@ -20,6 +20,7 @@ router.post("/login", passport.authenticate("local", {
   failureRedirect: "/login"
 }))
 
+// ============== PULLS CHALLENGE NAMES BASED ON USER =============== \\
 router.get('/api/challenges', function (req, res, next) {
   const userId = 27;
   db.Challenge.findAll({
@@ -38,23 +39,22 @@ router.get('/api/challenges', function (req, res, next) {
   console.log("We are here");
 });
 
-// router.get('/challenges', function (req, res, next) {
-//   const challengeId = 5;
-//   db.Location.findAll({
-//     where: {
-//       ChallengeId: challengeId
-//     }
-//   })
-//     .then(data => {
-//       console.log(req.user);
-//       console.log(req.isAuthenticated());
-//       console.log(data);
-//       res.json(data)
-//     }).catch(err => {
-//       console.log("ERROR " + err)
-//     })
-//   console.log("We are here");
-// });
+// ================== PULLS LOCATION DATA BASED ON CHALLENGE ============== \\
+router.get('/challenges', function (req, res, next) {
+  const challengeId = 5;
+  db.Location.findAll({
+    where: {
+      ChallengeId: challengeId
+    }
+  })
+    .then(data => {
+      console.log(data);
+      res.json(data)
+    }).catch(err => {
+      console.log("ERROR " + err)
+    })
+  console.log("Over here now");
+});
 // ================= POST TO REGISTER USER ================\\
 router.post('/signup', function (req, res, next) {
   console.log("sanity: " + req.body.username);
