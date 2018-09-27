@@ -24,7 +24,11 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
-      },
+      }, 
+    clue: {
+      type: Sequelize.STRING,
+      allownull: false
+    },
       UserId: {
       type: Sequelize.INTEGER,
       onDelete: "CASCADE",

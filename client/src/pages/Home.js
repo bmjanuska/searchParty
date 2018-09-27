@@ -14,7 +14,7 @@ class Home extends Component {
         axios.get("/api/challenges")
             .then(res => {
                 this.setState({
-                    challenges: res.data
+                    challenges: res.data,
                 })
                 console.log(res);
             });

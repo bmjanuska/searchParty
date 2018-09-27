@@ -6,8 +6,9 @@ module.exports = {
     lat: 28.567586,
     long: -81.3553641,
     checkedIn: false,
+    clue: "what a lovely clue",
     UserId: 1,
-    ChallengeId: 1
+    ChallengeId: 3
   }], {});
   },
 

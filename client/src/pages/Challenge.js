@@ -12,6 +12,7 @@ import axios from "axios";
 
 class Challenge extends Component {
     state = { 
+        locations: [],
         users: [], 
         successOpen: false, 
         denileOpen: false
@@ -39,7 +40,15 @@ class Challenge extends Component {
             })
         } else {
             /* geolocation IS NOT available */
-        }
+        };
+
+        axios.get("/challenge")
+            .then(res => {
+                this.setState({
+                    locations: res.data,
+                })
+                console.log(res);
+            });
     }
 
     checkin = () => {
