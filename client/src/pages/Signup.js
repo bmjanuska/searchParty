@@ -71,6 +71,12 @@ class Signup extends Component {
 						className="btn-pink"
 						onClick={this.handleSubmit}
 						type="submit"
+						to="/"
+						className={
+							window.location.pathname === "/"
+								? "nav-link active"
+								: "nav-link"
+						}
 					>
 						Submit
   					</Button>
