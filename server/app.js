@@ -5,7 +5,6 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 var Sequelize = require('sequelize');
-var db = require('./models')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var app = express();
@@ -16,6 +15,8 @@ var PORT = 3001;
 var session = require('express-session');
 var passport = require('passport');
 var MySQLStore = require('express-mysql-session')(session);
+
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -44,12 +45,17 @@ var options = {
 var sessionStore = new MySQLStore(options);
 
 app.use(session({
+  // each cookie signed with secret string
   secret: 'hfksdhflashdfil',
   store: sessionStore,
+  //update the session on each reload? nope
   resave: false,
+  //create cookie fo rusers not logged in? nope
   saveUninitialized: false,
   // cookie: { secure: true }
 }))
+
+
 
 app.use(indexRouter);
 app.use('/users', usersRouter);

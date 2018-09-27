@@ -7,15 +7,20 @@ var saltRounds = 10;
 var db = require("../models");
 /* GET home page. */
 router.get('/api/challenges', function(req, res, next) {
- 
-  const userId = 23;
+
+
+  const userId = 27;
+
   db.Challenge.findAll({
     where: {
       UserId: userId
+      
     }
   })
   .then(data => {
     console.log(data);
+    console.log(req.user);
+    console.log(req.isAuthenticated());
     res.json(data)
   }).catch(err => {
     console.log(err)
@@ -39,10 +44,11 @@ router.post('/signup', function(req, res, next)
   .then(result => {
 
     var user_id = result.id
+
     console.log("ID OF LAST ADDED USER: " + result.id);
     req.login(user_id, function(err) {
-      console.log(err)
-      res.json(user_id)
+      res.redirect("/");
+      // res.json(user_id)
     })
   })
   });
@@ -55,7 +61,7 @@ passport.serializeUser(function(user_id, done) {
 });
 
 passport.deserializeUser(function(user_id, done) { 
-    done(err, user_id);
+    done(null, user_id);
   });
 
 module.exports = router;
