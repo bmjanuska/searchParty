@@ -6,7 +6,8 @@ import axios from 'axios';
 
 class Home extends Component {
     state = {
-        challenges: []
+        challenges: [],
+        users: [],
     }
 
     componentDidMount() {
@@ -16,7 +17,7 @@ class Home extends Component {
                     challenges: res.data
                 })
                 console.log(res);
-            })
+            });
     }
 
     render() {
@@ -27,7 +28,7 @@ class Home extends Component {
                     <Row>
                         <h1>Challenges</h1>
 
-                        
+
                     </Row>
                     {/* Challenges */}
                     {this.state.challenges.map(item => {
