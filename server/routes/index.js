@@ -36,6 +36,7 @@ router.post("/login", passport.authenticate("local", {
   failureRedirect: "/login"
 }))
 
+
 // ============== PULLS CHALLENGE NAMES BASED ON USER =============== \\
 router.get('/api/challenges', function (req, res, next) {
   const userId = req.user;
@@ -58,7 +59,7 @@ router.get('/api/challenges', function (req, res, next) {
 
 // ================== PULLS LOCATION DATA BASED ON CHALLENGE ============== \\
 router.get('/challenges', function (req, res, next) {
-  const challengeId = 5;
+  const challengeId = 3;
   db.Location.findAll({
     where: {
       ChallengeId: challengeId

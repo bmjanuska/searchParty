@@ -7,11 +7,11 @@ const ChallengeList = (props) => (
     <div>
         <Row>
             <Col size="sm-12 md-9">
-                <h2>Orlando Challenge</h2>
+                {/* <h2>Orlando Challenge</h2> */}
                 {/* // Step/ Task # */}
-                <h3>Location 1</h3>
+                {/* <h3>Location 1</h3> */}
                 {/* // Clue  */}
-                <p>Clue: Come here to learn fullstack MERN</p>
+                {/* <p>Clue: Come here to learn fullstack MERN</p> */}
                 {/* // Button to check into the spot 
             // if the user is at the location they can check in and get a modal
             // notification that reveals the name of the spot ora huzzah you made it

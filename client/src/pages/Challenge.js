@@ -11,10 +11,10 @@ import axios from "axios";
 
 
 class Challenge extends Component {
-    state = { 
+    state = {
         locations: [],
-        users: [], 
-        successOpen: false, 
+        users: [],
+        successOpen: false,
         denileOpen: false
     }
 
@@ -54,25 +54,25 @@ class Challenge extends Component {
     checkin = () => {
         console.log("I be checkin in~")
         //if userlocation === the location of the specific location checkin in successfully 
-            // Recieve a congrats you found the spot msg
-            this.setState({successOpen: true})
+        // Recieve a congrats you found the spot msg
+        this.setState({ successOpen: true })
         // else 
-            // Keep lookin! 
+        // Keep lookin! 
     }
 
     handleSuccessClose = () => {
-        this.setState({successOpen: false})
+        this.setState({ successOpen: false })
     }
 
     handleDeniedClose = () => {
-        this.setState({denileOpen: false})
+        this.setState({ denileOpen: false })
     }
 
     render() {
         return (
             <div className="Challenge">
-                {this.state.successOpen && <ModalSuccess handleClose={this.handleSuccessClose}/>}
-                {this.state.denileOpen && <ModalDenied handleClose={this.handleDeniedClose}/>}
+                {this.state.successOpen && <ModalSuccess handleClose={this.handleSuccessClose} />}
+                {this.state.denileOpen && <ModalDenied handleClose={this.handleDeniedClose} />}
 
                 <Map
                     pos={this.state.pos}
@@ -85,14 +85,20 @@ class Challenge extends Component {
 
                 <Container>
                     <br></br>
-                    <Row>
-                        <h1>Checkpoints</h1>
-                        {/* {this.state.users.map( over the checkpoints)} */}
-                    </Row>
-                    <Hbar/>
-                    <ChallengeList
-                        handleCheckin={this.checkin}
-                    />
+                    {this.state.locations.map(item => {
+                        return (
+                            <Row key={item.id}>
+                                <h1 className="Checkpoints">{item.clue}</h1>
+                                {/* {this.state.users.map( over the checkpoints)} */}
+                            
+                            <Hbar />
+                            <ChallengeList
+                                handleCheckin={this.checkin}
+                            />
+                           </Row> 
+                        );
+                    })}
+
                     {/* Challenges */}
                 </Container>
 
