@@ -5,7 +5,8 @@ import ModalSuccess from "../components/ModalSuccess"
 import ModalDenied from "../components/ModalDenied"
 
 import { Hbar } from "../components/Bars";
-import { Container, Row, Col } from "../components/Grid";
+import { Container } from "../components/Grid";
+import { Row, Col } from "react-bootstrap";
 
 import axios from "axios";
 
