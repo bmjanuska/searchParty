@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import axios from 'axios'
+import { Container } from "../components/Grid";
+import { Form, Button } from "react-bootstrap";
 
 class Login extends Component {
     constructor() {
@@ -11,7 +13,7 @@ class Login extends Component {
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
-  
+
     }
 
     handleChange(event) {
@@ -22,11 +24,11 @@ class Login extends Component {
 
     handleSubmit(event) {
         console.log('login handleSubmit, username: ')
-		console.log(this.state.username)
-		console.log('login handleSubmit, password: ')
-		console.log(this.state.password)
-		event.preventDefault()
-        
+        console.log(this.state.username)
+        console.log('login handleSubmit, password: ')
+        console.log(this.state.password)
+        event.preventDefault()
+
 
         axios
             .post('/login', {
@@ -50,7 +52,7 @@ class Login extends Component {
             }).catch(error => {
                 console.log('login error: ')
                 console.log(error);
-                
+
             })
     }
 
@@ -59,48 +61,41 @@ class Login extends Component {
             return <Redirect to={{ pathname: this.state.redirectTo }} />
         } else {
             return (
-                <div>
+                <Container>
                     <h4>Login</h4>
-                    <form className="form-horizontal">
-                        <div className="form-group">
-                            <div className="col-1 col-ml-auto">
-                                <label className="form-label" htmlFor="username">Username</label>
-                            </div>
-                            <div className="col-3 col-mr-auto">
-                                <input className="form-input"
-                                    type="text"
-                                    id="username"
-                                    name="username"
-                                    placeholder="Username"
-                                    value={this.state.username}
-                                    onChange={this.handleChange}
-                                />
-                            </div>
-                        </div>
-                        <div className="form-group">
-                            <div className="col-1 col-ml-auto">
-                                <label className="form-label" htmlFor="password">Password: </label>
-                            </div>
-                            <div className="col-3 col-mr-auto">
-                                <input className="form-input"
-                                    placeholder="password"
-                                    type="password"
-                                    name="password"
-                                    value={this.state.password}
-                                    onChange={this.handleChange}
-                                />
-                            </div>
-                        </div>
-                        <div className="form-group ">
-                            <div className="col-7"></div>
-                            <button
-                                className="btn btn-primary col-1 col-mr-auto"
-                               
-                                onClick={this.handleSubmit}
-                                type="submit">Login</button>
-                        </div>
-                    </form>
-                </div>
+                    <Form>
+                        <Form.Group controlId="formGroupEmail">
+                            <Form.Label htmlFor="username">Username</Form.Label>
+                            <Form.Control
+                                type="text"
+                                id="username"
+                                name="username"
+                                placeholder="Your Cool Username"
+                                value={this.state.username}
+                                onChange={this.handleChange}
+                            />
+                        </Form.Group>
+                        <Form.Group controlId="formGroupPassword">
+                            <Form.Label htmlFor="password">Password</Form.Label>
+                            <Form.Control
+                                placeholder="password"
+                                type="password"
+                                name="password"
+                                value={this.state.password}
+                                onChange={this.handleChange}
+                            />
+                        </Form.Group>
+                        <Button
+                            // variant="primary" 
+                            className="btn-pink"
+                            onClick={this.handleSubmit}
+                            type="submit"
+                        >
+                            Login
+  					</Button>
+                        {/* TODO or sign in link here  */}
+                    </Form>
+                </Container>
             )
         }
     }
