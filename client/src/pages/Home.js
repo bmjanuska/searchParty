@@ -6,7 +6,6 @@ import axios from 'axios';
 
 class Home extends Component {
     state = {
-        users: [],
         challenges: []
     }
 
