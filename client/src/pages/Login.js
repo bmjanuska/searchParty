@@ -7,8 +7,7 @@ class Login extends Component {
         super()
         this.state = {
             username: '',
-            password: '',
-            redirectTo: null
+            password: ''
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
@@ -22,8 +21,12 @@ class Login extends Component {
     }
 
     handleSubmit(event) {
-        event.preventDefault()
-        console.log('handleSubmit')
+        console.log('login handleSubmit, username: ')
+		console.log(this.state.username)
+		console.log('login handleSubmit, password: ')
+		console.log(this.state.password)
+		event.preventDefault()
+        
 
         axios
             .post('/login', {

@@ -9,13 +9,15 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var app = express();
 var PORT = 3001;
-
+var db = require("./models");
 // ========= authentication==========
 
 var session = require('express-session');
 var passport = require('passport');
-var MySQLStore = require('express-mysql-session')(session);
+var LocalStrategy = require('passport-local').Strategy;
 
+var MySQLStore = require('express-mysql-session')(session);
+var bcrypt = require("bcrypt");
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -58,7 +60,39 @@ app.use(session({
 
 
 app.use(indexRouter);
-app.use('/users', usersRouter);
+app.use(usersRouter);
+
+passport.use(new LocalStrategy(
+  function(username, password, done) {
+    console.log(username)
+    console.log(password)
+  
+    db.User.findOne({
+      where: {
+        username: username
+      }
+    }).then(results => {
+      console.log(results.username);
+      console.log(results.password);
+    
+      if (results.length === 0) {
+        {done(null, false)}
+      }
+      console.log(results.password.toString());
+      var hash = results.password.toString()
+      bcrypt.compare(password, hash, function(err, res) {
+        if (res === true) {
+          console.log("logged in now")
+          return done (null, {user_id: results.id})
+        } else {
+          return done(null, false)
+        }
+      });
+
+      
+    })
+  }
+));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
