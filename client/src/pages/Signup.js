@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Container } from "../components/Grid";
+import { Form, Button } from "react-bootstrap";
 
 class Signup extends Component {
 	constructor() {
@@ -28,62 +30,55 @@ class Signup extends Component {
 			username: this.state.username,
 			password: this.state.password
 		})
-		.then(function (response) {
-			console.log("THIS IS A RESPONSE: " + response);
-		  })
-		  .catch(function (error) {
-			console.log(error.response);
-		  });
+			.then(function (response) {
+				console.log("THIS IS A RESPONSE: " + response);
+			})
+			.catch(function (error) {
+				console.log(error.response);
+			});
 	}
 
 
-render() {
-	return (
-		<div className="SignupForm">
-			<h4>Sign up</h4>
-			<form className="form-horizontal">
-				<div className="form-group">
-					<div className="col-1 col-ml-auto">
-						<label className="form-label" htmlFor="username">Username</label>
-					</div>
-					<div className="col-3 col-mr-auto">
-						<input className="form-input"
+	render() {
+		return (
+			<Container>
+				<h4>Join the Search!</h4>
+
+				<Form>
+					<Form.Group controlId="formGroupEmail">
+						<Form.Label htmlFor="username">Username</Form.Label>
+						<Form.Control
 							type="text"
 							id="username"
 							name="username"
-							placeholder="Username"
+							placeholder="Enter a Cool Username"
 							value={this.state.username}
 							onChange={this.handleChange}
 						/>
-					</div>
-				</div>
-				<div className="form-group">
-					<div className="col-1 col-ml-auto">
-						<label className="form-label" htmlFor="password">Password: </label>
-					</div>
-					<div className="col-3 col-mr-auto">
-						<input className="form-input"
+					</Form.Group>
+					<Form.Group controlId="formGroupPassword">
+						<Form.Label htmlFor="password">Password</Form.Label>
+						<Form.Control
 							placeholder="password"
 							type="password"
 							name="password"
 							value={this.state.password}
 							onChange={this.handleChange}
 						/>
-					</div>
-				</div>
-				<div className="form-group ">
-					<div className="col-7"></div>
-					<button
-						className="btn btn-primary col-1 col-mr-auto"
+					</Form.Group>
+					<Button
+						// variant="primary" 
+						className="btn-pink"
 						onClick={this.handleSubmit}
 						type="submit"
-					>Sign up</button>
-				</div>
-			</form>
-		</div>
-
-	)
-}
+					>
+						Submit
+  					</Button>
+					{/* TODO or Logn in link here  */}
+				</Form>
+			</Container>
+		)
+	}
 }
 
 export default Signup
