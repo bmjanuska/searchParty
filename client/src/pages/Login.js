@@ -23,10 +23,7 @@ class Login extends Component {
     }
 
     handleSubmit(event) {
-        console.log('login handleSubmit, username: ')
-        console.log(this.state.username)
-        console.log('login handleSubmit, password: ')
-        console.log(this.state.password)
+        
         event.preventDefault()
 
 
