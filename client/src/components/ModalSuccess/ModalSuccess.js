@@ -1,6 +1,6 @@
 import React from "react";
 import "./ModalSuccess.css";
-import Modal from "../Modal"; 
+import Modal from "../Modal";
 
 const ModalSuccess = props => (
     <Modal>

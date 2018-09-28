@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import SearchForm from "../components/SearchForm";
 import SearchResults from "../components/SearchResults";
 import API from "../utils/API.js";
-import { Container, Row, Col } from "../components/Grid";
+import { Container } from "../components/Grid";
+import { Row, Col, Form, Button } from "react-bootstrap";
+
 import { Hbar } from "../components/Bars";
 
 class Search extends Component {
@@ -12,15 +14,15 @@ class Search extends Component {
     lat: "",
     lng: "",
     error: "",
-    clue:"",
-    challenge:"", 
-    searchedBox: false
+    clue: "",
+    challenge: "",
+    showresults: false
   };
 
   madeSearch = () => {
     console.log("Look you did a search")
-        this.setState({successOpen: true})
-}
+    this.setState({ showresults: true })
+  }
 
   handleInputChange = event => {
     this.setState({ search: event.target.value });
@@ -61,29 +63,19 @@ class Search extends Component {
               <h1>Search</h1>
             </Col>
           </Row>
-      <Hbar/>
-          <Row>
-          <Col size="12">
-            <label htmlFor="place">Address or Place</label>
-            <SearchForm
-              handleFormSubmit={this.handleFormSubmit}
-              handleInputChange={this.handleInputChange}
-            />
-            </Col>
-          </Row>
-
-          <Row>
-          <Col size="12">
-            <SearchResults
-              handle={this.madeSearch}
-              formatted_address={this.state.formatted_address}
-              lat={this.state.lat}
-              lng={this.state.lng}
-              clue={this.state.clue}
-              challenge={this.state.challenge}
-            />
-            </Col>
-          </Row>          
+          <Hbar />
+          <SearchForm
+            handleFormSubmit={this.handleFormSubmit}
+            handleInputChange={this.handleInputChange}
+          />
+          <SearchResults
+            handle={this.madeSearch}
+            formatted_address={this.state.formatted_address}
+            lat={this.state.lat}
+            lng={this.state.lng}
+            clue={this.state.clue}
+            challenge={this.state.challenge}
+          />
         </Container>
       </div>
     );

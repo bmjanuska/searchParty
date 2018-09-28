@@ -5,7 +5,8 @@ import ModalSuccess from "../components/ModalSuccess"
 import ModalDenied from "../components/ModalDenied"
 
 import { Hbar } from "../components/Bars";
-import { Container, Row, Col } from "../components/Grid";
+import { Container } from "../components/Grid";
+import { Row, Col } from "react-bootstrap";
 
 import axios from "axios";
 
@@ -90,12 +91,12 @@ class Challenge extends Component {
                             <Row key={item.id}>
                                 <h1 className="Checkpoints">{item.clue}</h1>
                                 {/* {this.state.users.map( over the checkpoints)} */}
-                            
-                            <Hbar />
-                            <ChallengeList
-                                handleCheckin={this.checkin}
-                            />
-                           </Row> 
+
+                                <Hbar />
+                                <ChallengeList
+                                    handleCheckin={this.checkin}
+                                />
+                            </Row>
                         );
                     })}
 

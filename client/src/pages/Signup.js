@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Container } from "../components/Grid";
 import { Form, Button } from "react-bootstrap";
+import { browserHistory } from 'react-router-dom';
 
 class Signup extends Component {
 	constructor() {
@@ -32,6 +33,9 @@ class Signup extends Component {
 		})
 			.then(function (response) {
 				console.log("THIS IS A RESPONSE: " + response);
+				if (response.status===200){
+					browserHistory.push("/login")
+				}
 			})
 			.catch(function (error) {
 				console.log(error.response);
@@ -71,6 +75,12 @@ class Signup extends Component {
 						className="btn-pink"
 						onClick={this.handleSubmit}
 						type="submit"
+						to="/"
+						className={
+							window.location.pathname === "/"
+								? "nav-link active"
+								: "nav-link"
+						}
 					>
 						Submit
   					</Button>

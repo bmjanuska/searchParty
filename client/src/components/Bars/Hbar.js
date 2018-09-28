@@ -4,9 +4,8 @@ import { Link } from "react-router-dom";
 
 
 export const Hbar = props => (
-<div>
-  <hr></hr>
-</div>
-  );
-  
-  
+  <div>
+    <hr></hr>
+  </div>
+);
+
