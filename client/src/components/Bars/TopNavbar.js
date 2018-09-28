@@ -15,8 +15,8 @@ export const TopNavbar = props => (
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="mr-auto">
 
-        <Nav.Link>
-          <Link
+        <Nav.Link
+          
             to="/"
             className={
               window.location.pathname === "/home" || window.location.pathname === "/home"
@@ -25,11 +25,11 @@ export const TopNavbar = props => (
             }
           >
             Home
-          </Link>
+        
         </Nav.Link>
 
-        <Nav.Link>
-          <Link
+        <Nav.Link
+        
             to="/challenge"
             className={
               window.location.pathname === "/challenge" || window.location.pathname === "/challenge"
@@ -38,11 +38,10 @@ export const TopNavbar = props => (
             }
           >
             Challenge
-          </Link>
+        
         </Nav.Link>
 
-        <Nav.Link>
-          <Link
+        <Nav.Link
             to="/user"
             className={
               window.location.pathname === "/user"
@@ -51,11 +50,10 @@ export const TopNavbar = props => (
             }
           >
             My Account
-          </Link>
+          
         </Nav.Link>
 
-        <Nav.Link>
-          <Link
+        <Nav.Link
             to="/search"
             className={
               window.location.pathname === "/search"
@@ -64,11 +62,11 @@ export const TopNavbar = props => (
             }
           >
             Search
-          </Link>
+          
         </Nav.Link>
 
-        <Nav.Link>
-          <Link
+        <Nav.Link
+        
             to="/login"
             className={
               window.location.pathname === "/login"
@@ -77,7 +75,7 @@ export const TopNavbar = props => (
             }
           >
             Logout
-          </Link>
+          
         </Nav.Link>
 
       </Nav>
