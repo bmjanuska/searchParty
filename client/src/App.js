@@ -36,7 +36,7 @@ class App extends Component {
           <Route exact path="/challenge" render={ () => <Challenge challenges={this.state.challenges} /> }/>
           <Route exact path="/user" component={User} />
           <Route exact path="/search" component={Search} challenges={this.state.challenges}/>
-          <Route exact path="/signup" component={Signup} />
+          <Route exact path="/signup" render={ (props) => <Signup {...props}/> } />
           <Route exact path="/login" component={Login} />
           <Footer />
         </div>

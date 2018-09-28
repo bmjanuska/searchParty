@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Container } from "../components/Grid";
 import { Form, Button } from "react-bootstrap";
-import { browserHistory } from 'react-router-dom';
 
 class Signup extends Component {
 	constructor() {
@@ -34,7 +33,9 @@ class Signup extends Component {
 			.then(function (response) {
 				console.log("THIS IS A RESPONSE: " + response);
 				if (response.status===200){
-					browserHistory.push("/login")
+					console.log("We are hereeeeee");
+					// this.props.history.push("/")
+					window.location.href = "/login"
 				}
 			})
 			.catch(function (error) {
