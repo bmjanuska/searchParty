@@ -41,11 +41,11 @@ router.get("/challenge", function (req, res, next) {
 // }))
 
 router.post("/login", passport.authenticate("local"), function (req, res) {
-  var user = req.user;
+  var user = 20;
   console.log("The User " + user);
   db.User.findOne({
     where: {
-      id: user.id
+      id: user
     }
   }).then(function (dbUser) {
     activeID = dbUser.id;
