@@ -41,7 +41,7 @@ router.get("/challenge", function (req, res, next) {
 // }))
 
 router.post("/login", passport.authenticate("local"), function (req, res) {
-  var username = req.body.username;
+  var user = req.body.username;
   console.log("The User " + user);
   db.User.findOne({
     where: {
@@ -60,24 +60,24 @@ router.post("/login", passport.authenticate("local"), function (req, res) {
 
 
 // ============== PULLS CHALLENGE NAMES BASED ON USER =============== \\
-router.get('/api/challenges', function (req, res, next) {
-  const userId = req.user;
-  console.log("SHOULD BE LOGGED IN USER: " + userId);
-  db.Challenge.findAll({
-    where: {
-      UserId: userId
-    }
-  })
-    .then(data => {
-      // console.log(req.user);
-      // console.log(req.isAuthenticated());
-      console.log(data);
-      res.json(data)
-    }).catch(err => {
-      console.log("ERROR " + err)
-    })
+// router.get('/api/challenges', function (req, res, next) {
+//   const userId = req.user;
+//   console.log("SHOULD BE LOGGED IN USER: " + userId);
+//   db.Challenge.findAll({
+//     where: {
+//       UserId: userId
+//     }
+//   })
+//     .then(data => {
+//       // console.log(req.user);
+//       // console.log(req.isAuthenticated());
+//       console.log(data);
+//       res.json(data)
+//     }).catch(err => {
+//       console.log("ERROR " + err)
+//     })
   
-});
+// });
 
 // ================== PULLS LOCATION DATA BASED ON CHALLENGE ============== \\
 router.get('/challenges', function (req, res, next) {
