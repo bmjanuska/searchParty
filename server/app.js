@@ -185,7 +185,7 @@ app.post('/signup', (req, res) => {
   const { username, password } = req.body;
   const saltRounds = 10;
   bcrypt.hash(password, saltRounds, function (err, hash) {
-    db.user.create({
+    db.User.create({
       username: username,
       password: hash
     }).then((result) => {
@@ -200,7 +200,7 @@ app.post('/log-in', (req, res) => {
   const { username, password } = req.body;
   console.log("User submitted: ", username, password);
 
-  db.user.findOne(
+  db.User.findOne(
     {
       where: { username: username }
     })
