@@ -1,8 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var passport = require('passport');
-var bcrypt = require('bcrypt');
-var saltRounds = 10;
 
 var db = require("../models");
 /* GET home page. */
@@ -51,7 +49,7 @@ router.post("/login", passport.authenticate("local"), function (req, res) {
     console.log(dbUser.dataValues.id);
     activeId = dbUser.dataValues.id;
     console.log("here is active id " + activeId);
-    res.json("/");
+    res.redirect(307, "/user");
   })
     .catch(err => {
       console.log(err);
@@ -61,24 +59,24 @@ router.post("/login", passport.authenticate("local"), function (req, res) {
 
 
 // ============== PULLS CHALLENGE NAMES BASED ON USER =============== \\
-// router.get('/api/challenges', function (req, res, next) {
-//   const userId = req.user;
-//   console.log("SHOULD BE LOGGED IN USER: " + userId);
-//   db.Challenge.findAll({
-//     where: {
-//       UserId: userId
-//     }
-//   })
-//     .then(data => {
-//       // console.log(req.user);
-//       // console.log(req.isAuthenticated());
-//       console.log(data);
-//       res.json(data)
-//     }).catch(err => {
-//       console.log("ERROR " + err)
-//     })
+router.get('/api/challenges', function (req, res, next) {
+  const userId = activeId;
+  console.log("SHOULD BE LOGGED IN USER: " + userId);
+  db.Challenge.findAll({
+    where: {
+      UserId: userId
+    }
+  })
+    .then(data => {
+      // console.log(req.user);
+      // console.log(req.isAuthenticated());
+      console.log(data);
+      res.json(data)
+    }).catch(err => {
+      console.log("ERROR " + err)
+    })
   
-// });
+});
 
 // ================== PULLS LOCATION DATA BASED ON CHALLENGE ============== \\
 router.get('/challenges', function (req, res, next) {
