@@ -2,8 +2,11 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Container } from "../components/Grid";
 import { Form, Button } from "react-bootstrap";
-
+import AuthHelperMethods from '../components/AuthHelperMethods'
 class Signup extends Component {
+
+	Auth = new AuthHelperMethods();
+
 	constructor() {
 		super()
 		this.state = {
@@ -18,30 +21,20 @@ class Signup extends Component {
 			[event.target.name]: event.target.value
 		})
 	}
-	handleSubmit(event) {
-		console.log('sign-up handleSubmit, username: ')
-		console.log(this.state.username)
-		console.log('sign-up handleSubmit, password: ')
-		console.log(this.state.password)
-		event.preventDefault()
 
-		//request to server to add a new username/password
-		axios.post('/signup', {
+	handleFormSubmit = e => {
+		e.preventDefault();
+
+		//Add this part right here
+		axios.post("/signup", {
 			username: this.state.username,
 			password: this.state.password
 		})
-			.then(function (response) {
-				console.log("THIS IS A RESPONSE: " + response);
-				if (response.status===200){
-					console.log("We are hereeeeee");
-					// this.props.history.push("/")
-					window.location.href = "/login"
-				}
-			})
-			.catch(function (error) {
-				console.log(error.response);
+			.then(data => {
+				console.log(data);
+				this.props.history.replace("/login");
 			});
-	}
+	};
 
 
 	render() {
