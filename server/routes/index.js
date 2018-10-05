@@ -16,7 +16,7 @@ router.get('/user', authenticationMiddleware(), function (req, res) {
 
 
 router.get("/login", function (req, res) {
-  redirect("/login");
+  redirect("/");
 });
 
 router.get("/challenge", function (req, res, next) {
@@ -41,7 +41,7 @@ router.get("/challenge", function (req, res, next) {
 // }))
 
 router.post("/login", passport.authenticate("local"), function (req, res) {
-  var user = 20;
+  var user = req.user;
   console.log("The User " + user);
   db.User.findOne({
     where: {
@@ -49,8 +49,8 @@ router.post("/login", passport.authenticate("local"), function (req, res) {
     }
   }).then(function (dbUser) {
     activeID = dbUser.id;
-    console.log("here is active id" + activeID);
-    res.redirect("/");
+    console.log("here is active id" + activeId);
+    res.json("/");
   })
     .catch(err => {
       console.log(err);
@@ -76,7 +76,7 @@ router.get('/api/challenges', function (req, res, next) {
     }).catch(err => {
       console.log("ERROR " + err)
     })
-  console.log("We are here");
+  
 });
 
 // ================== PULLS LOCATION DATA BASED ON CHALLENGE ============== \\
