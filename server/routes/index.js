@@ -48,8 +48,9 @@ router.post("/login", passport.authenticate("local"), function (req, res) {
       username: user
     }
   }).then(function (dbUser) {
-    activeID = dbUser.id;
-    console.log("here is active id" + activeId);
+    console.log(dbUser.dataValues.id);
+    activeId = dbUser.dataValues.id;
+    console.log("here is active id " + activeId);
     res.json("/");
   })
     .catch(err => {
