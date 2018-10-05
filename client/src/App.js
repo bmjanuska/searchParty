@@ -9,24 +9,16 @@ import Search from "./pages/Search";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login"
 import axios from "axios";
-import AuthHelperMethods from './components/AuthHelperMethods';
-//Our higher order component
-import withAuth from './components/withAuth';
+
 
 class App extends Component {
 
-  Auth = new AuthHelperMethods();
 
   state ={
     challenges: [], 
     username: "",
     password: ""
   }
-
-  _handleLogout = () => {
-    this.Auth.logout()
-    this.props.history.replace('/login');
-    }
 
   componentDidMount(){
     // Get info from API
@@ -57,6 +49,6 @@ class App extends Component {
   }
 };
 
-export default withAuth(App);
+export default App;
 
 
