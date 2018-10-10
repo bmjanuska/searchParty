@@ -37,7 +37,8 @@ class App extends Component {
         <div>
           <TopNavbar />
           <Route exact path="/" component={Home} challenges={this.state.challenges}/>
-          <Route exact path="/challenge" render={ () => <Challenge challenges={this.state.challenges} /> }/>
+          <Route exact path="/challenge" render={ () => <Challenge/> }/>
+          {/* <Route exact path="/challenge" render={ () => <Challenge challenges={this.state.challenges} /> }/> */}
           <Route exact path="/user" component={User} />
           <Route exact path="/search" component={Search} challenges={this.state.challenges}/>
           <Route exact path="/signup" render={ (props) => <Signup {...props}/> } />

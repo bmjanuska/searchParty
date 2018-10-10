@@ -8,14 +8,14 @@ import { Navbar, Nav } from "react-bootstrap";
 export const TopNavbar = props => (
   <Navbar className="bg-purp" expand="lg">
     <Navbar.Brand href="/">
-      <img src="../images/icon-01.svg" style={{ width: 40 }} />
+      <img src="../images/icon-01.svg" alt="Search Party" style={{ width: 40 }} />
       Search Party
   </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="mr-auto">
 
-        <Nav.Link
+        <Link
           
             to="/"
             className={
@@ -26,9 +26,9 @@ export const TopNavbar = props => (
           >
             Home
         
-        </Nav.Link>
+        </Link>
 
-        <Nav.Link
+        <Link
         
             to="/challenge"
             className={
@@ -39,9 +39,9 @@ export const TopNavbar = props => (
           >
             Challenge
         
-        </Nav.Link>
+        </Link>
 
-        <Nav.Link
+        <Link
             to="/user"
             className={
               window.location.pathname === "/user"
@@ -51,9 +51,9 @@ export const TopNavbar = props => (
           >
             My Account
           
-        </Nav.Link>
+        </Link>
 
-        <Nav.Link
+        <Link
             to="/search"
             className={
               window.location.pathname === "/search"
@@ -63,9 +63,9 @@ export const TopNavbar = props => (
           >
             Search
           
-        </Nav.Link>
+        </Link>
 
-        <Nav.Link
+        <Link
         
             to="/login"
             className={
@@ -76,7 +76,7 @@ export const TopNavbar = props => (
           >
             Logout
           
-        </Nav.Link>
+        </Link>
 
       </Nav>
     </Navbar.Collapse>

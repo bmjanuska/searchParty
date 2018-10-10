@@ -1,6 +1,6 @@
 import React from "react";
 import "./SearchResults.css";
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import { Row, Col, Form, Button } from "react-bootstrap";
 
 
 const SearchResults = props => (

@@ -3,7 +3,7 @@ import SearchForm from "../components/SearchForm";
 import SearchResults from "../components/SearchResults";
 import API from "../utils/API.js";
 import { Container } from "../components/Grid";
-import { Row, Col, Form, Button } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 
 import { Hbar } from "../components/Bars";
 
