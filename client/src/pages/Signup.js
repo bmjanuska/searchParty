@@ -76,7 +76,6 @@ class Signup extends Component {
 					</Form.Group>
 					<Button
 						// variant="primary" 
-						className="btn-pink"
 						onClick={this.handleSubmit}
 						type="submit"
 						to="/"
