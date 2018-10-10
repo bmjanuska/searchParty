@@ -3,23 +3,23 @@ import "./SearchForm.css";
 import { Row, Col, Form, Button } from "react-bootstrap";
 
 const SearchForm = props => (
-  <Form>
     <Row>
       {/* Search Input */}
       <Col sm={8}>
-        <Form.Group controlId="formBasicPassword">
-          <Form.Label>Address or Place</Form.Label>
-          <Form.Control
-            value={props.search}
-            onChange={props.handleInputChange}
-            name="place"
-            type="text"
-            className="form-control"
-            placeholder="Leu Gardens"
-            id="place"
-          />
-        </Form.Group>
-
+      <form className="search">
+          <Form.Group>
+            <Form.Label>Address or Place</Form.Label>
+            <input
+              value={props.search}
+              onChange={props.handleInputChange}
+              name="place"
+              type="text"
+              className="form-control"
+              placeholder="Leu Gardens"
+              id="place"
+            />
+          </Form.Group>
+        </form>
       </Col>
       <Col sm={4}>
 
@@ -32,7 +32,6 @@ const SearchForm = props => (
           </Button>
       </Col>
     </Row>
-  </Form>
 );
 
 export default SearchForm;
