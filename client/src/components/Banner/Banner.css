@@ -1,0 +1,9 @@
+.jumbotron { 
+    height: 400;
+    background-color: #FFD842;
+    /* background-image: url("https://ubisafe.org/images/orange-vector-confetti-6.png"); */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

@@ -1,0 +1,14 @@
+.bg-foot{ 
+    margin-top: 25px;
+    background-color: #666;
+}
+
+.navbar .brand, .navbar .nav > li > a {
+    color: #fff;
+    font-family: 'Comfortaa', cursive;
+    letter-spacing: 1px;
+    font-size: 18px;
+}
+.navbar .brand, .navbar .nav > li > a:hover {
+    color: #35DDFF;
+}

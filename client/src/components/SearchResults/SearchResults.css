@@ -1,0 +1,11 @@
+ul.search-results img {
+  margin: 0 auto;
+}
+
+.latlng { 
+  font-size: 1.25rem;
+  font-family: 'Comfortaa', cursive;
+  color: #542774;
+  font-weight: 500;
+  line-height: 1.2;
+}
